@@ -1,0 +1,25 @@
+#!/bin/bash
+
+PASSWORD=$1
+INPUT_PATH=./*.pdf
+OUTPUT_PATH=./decrypted
+USAGE="usage: $0 <password>"
+
+if [ "$#" -ne 1 ]; then
+    echo "$USAGE"
+	exit 99
+fi
+
+if [ ! -d "$OUTPUT_PATH" ]; then
+	mkdir $OUTPUT_PATH
+fi
+
+for INPUT in $INPUT_PATH
+do
+	FILE="${INPUT##*/}"
+	OUTPUT=$OUTPUT_PATH/$FILE
+	echo "Processing $INPUT with password: $PASSWORD to $OUTPUT"
+	qpdf --password=$PASSWORD --decrypt $INPUT $OUTPUT
+done
+
+
