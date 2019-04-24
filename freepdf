@@ -1,8 +1,8 @@
 #!/bin/bash
 
 PASSWORD=$1
-INPUT_PATH=./*.pdf
-OUTPUT_PATH=./decrypted
+INPUT_PATH="./*.pdf"
+OUTPUT_PATH="./decrypted"
 USAGE="usage: $0 <password>"
 
 if [ "$#" -ne 1 ]; then
@@ -19,7 +19,7 @@ do
 	FILE="${INPUT##*/}"
 	OUTPUT=$OUTPUT_PATH/$FILE
 	echo "Processing $INPUT with password: $PASSWORD to $OUTPUT"
-	qpdf --password=$PASSWORD --decrypt $INPUT $OUTPUT
+	qpdf --password="$PASSWORD" --decrypt "$INPUT" "$OUTPUT"
 done
 
 
