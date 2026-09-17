@@ -1,5 +1,5 @@
 # remove-pdf-password
-A shellscript to decrypt all pdf files sharing the same password in a folder. Some lecturer tend to encrypt their slides. That's why I made this script to not let me annoy.
+A shellscript to decrypt all pdf files sharing the same password in a folder. Some lecturers tend to encrypt their slides. That's why I made this script to not let me annoy.
 ## Requirements
  - bash
  - qpdf
